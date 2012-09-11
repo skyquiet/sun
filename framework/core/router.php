@@ -12,12 +12,14 @@ class router
 			$pathInfo = ltrim($pathInfo,'/');
 			$pathInfoArr = explode('/', $pathInfo);
 			// var_dump($pathInfoArr);
+			// 判断$pathInfoArr[0]有这个文件夹的话，就当作app路径，没有的话默认等于配置的默认app
+			// if (is_dir())
 			$controller = $pathInfoArr[0];
 			$action = $pathInfoArr[1];
 			$controllerFile = dirname(dirname(__FILE__))."\controllers\\{$controller}.controller.php";
 			if(file_exists($controllerFile))
 			{
-				require dirname(dirname(__FILE__))."\controllers\\{$controller}.controller.php";
+				require $controllerFile;
 				$controller = new $controller();
 				$controller->$action();
 			}

@@ -6,4 +6,4 @@
  */
 require dirname(__FILE__).'/framework/core.php';
 require dirname(__FILE__).'/config/config.php';
-router::run();
+router::run($config);
