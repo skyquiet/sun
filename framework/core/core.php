@@ -5,4 +5,5 @@
 class core
 {
 	public $a = 'test';
+	public $b;
 }
