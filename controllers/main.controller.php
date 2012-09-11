@@ -5,4 +5,8 @@ class main
 	{
 		echo '您打开了默认页面！！！';
 	}
+	function test()
+	{
+		echo 'test';
+	}
 }

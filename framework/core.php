@@ -12,8 +12,19 @@ class router
 			$pathInfo = ltrim($pathInfo,'/');
 			$pathInfoArr = explode('/', $pathInfo);
 			// var_dump($pathInfoArr);
-			
-
+			$controller = $pathInfoArr[0];
+			$action = $pathInfoArr[1];
+			$controllerFile = dirname(dirname(__FILE__))."\controllers\\{$controller}.controller.php";
+			if(file_exists($controllerFile))
+			{
+				require dirname(dirname(__FILE__))."\controllers\\{$controller}.controller.php";
+				$controller = new $controller();
+				$controller->$action();
+			}
+			else
+			{
+				exit('File is not exists!');
+			}
 		}
 		else
 		{
