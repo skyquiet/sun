@@ -1,3 +1,10 @@
 This is a php framework.
 
 Just for learn php framework.
+
+1.默认支持多个APP模式
+支持多个APP模式的开关默认打开
+2.每个APP有自己的配置文件
+整个站点有统一的配置文件，但是加载之后各个APP的配置文件会覆盖掉统一配置项
+3，路由支持pathinfo模式
+
