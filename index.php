@@ -5,5 +5,7 @@
  * 2012-9-11
  */
 require dirname(__FILE__).'/system/sun.php';
-require dirname(__FILE__).'/config/config.php';
-router::run($config);
+//应用名称
+$appName = array('home','manage');
+//开启系统
+sun::run($appName);
